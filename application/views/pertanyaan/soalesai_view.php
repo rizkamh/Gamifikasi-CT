@@ -6,15 +6,13 @@
 <!--sidebar-menu-->
 
 <li><a href="home"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
-<li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Manage Mahasiswa</span> <span
-			class="icon icon-chevron-down pull-right" style="margin-right: 5px;"></span></a>
+<li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Manage Mahasiswa</span> <span class="icon icon-chevron-down pull-right" style="margin-right: 5px;"></span></a>
 	<ul>
 		<li><a href="mahasiswa">Data Mahasiswa</a></li>
 		<li><a href="nilai">Nilai</a></li>
 	</ul>
 </li>
-<li class="submenu"> <a href="#"><i class="icon icon-print"></i> <span>Laporan</span> <span
-			class="icon icon-chevron-down pull-right" style="margin-right: 5px;"></span></a>
+<li class="submenu"> <a href="#"><i class="icon icon-print"></i> <span>Laporan</span> <span class="icon icon-chevron-down pull-right" style="margin-right: 5px;"></span></a>
 	<ul>
 		<li><a href="laporan/mahasiswalaporan">Laporan Mahasiswa</a></li>
 		<li><a href="laporan/nilailaporan">Laporan Nilai</a></li>
@@ -46,8 +44,7 @@
 	</div>
 	<hr>
 	<div class="container-fluid">
-		<div id="modalkirim" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-			aria-hidden="true">
+		<div id="modalkirim" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3 id="myModalLabel"> Kirim soal ke mahasiswa </h3>
@@ -106,7 +103,7 @@
 							</select>
 							<span name="pilihabsen"></span>
 						</div>
-					</div> -->	
+					</div> -->
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -158,15 +155,15 @@
 					<!-- <form action="soalesai/simpan" id="myform" name="myform" class="form-horizontal" enctype="multipart/form-data" method="POST"> -->
 					<!-- <form action="soalesai/simpan" name="form1" method="POST" class="form-horizontal"> -->
 					<form action="" id="form1" name="form1" class="form-horizontal" enctype="multipart/form-data">
-						<input type="hidden" name="tanggal" id="tanggal" value="<?= date('Y-m-d H:i:s');?>">						
-						<input type='hidden' id='matakuliah' name='matakuliah' value='MK1'>					
-						<!-- <?php 
-						$cek = $this->db->query("select MAX(idsoal) AS akhir from tblsoalesai");
-						$cek = $cek->result_array();	
-						print_r($cek[0]['akhir']);
-						?>		 -->
-								<input class="span1" type="hidden" id="idsoal" name="idsoal" readonly value="-">								
-								<!-- <select id="idsoal" name="idsoal" class="form-control">
+						<input type="hidden" name="tanggal" id="tanggal" value="<?= date('Y-m-d H:i:s'); ?>">
+						<input type='hidden' id='matakuliah' name='matakuliah' value='MK1'>
+						<!-- <?php
+								$cek = $this->db->query("select MAX(idsoal) AS akhir from tblsoalesai");
+								$cek = $cek->result_array();
+								print_r($cek[0]['akhir']);
+								?>		 -->
+						<input class="span1" type="hidden" id="idsoal" name="idsoal" readonly value="-">
+						<!-- <select id="idsoal" name="idsoal" class="form-control">
 									<option value="" disabled selected>Pilih</option>									
 								</select> -->
 						<div class="control-group">
@@ -174,7 +171,7 @@
 							<div class="controls">
 								<select class="span2" id="idlevel" name="idlevel" required>
 									<?php foreach ($level as $key => $value) { ?>
-										<option value="<?php echo $value['idlevel'];?>"><?php echo $value['nama_level'] ?></option>
+										<option value="<?php echo $value['idlevel']; ?>"><?php echo $value['nama_level'] ?></option>
 									<?php } ?>
 								</select>
 							</div>
@@ -185,13 +182,12 @@
 							<div class="controls">
 								<input class="span1" type="text" id="noesai" name="noesai" readonly>
 							</div>
-						</div>						
+						</div>
 						<div class="control-group" style="margin-right:10px;">
 							<label class="control-label"><strong>Isi
 									Soal</strong></label>
 							<div class="controls">
-								<textarea class="span12" rows="4" name="isiesai" id="isiesai"
-									placeholder="Ketikan soal..."></textarea>
+								<textarea class="span12" rows="4" name="isiesai" id="isiesai" placeholder="Ketikan soal..."></textarea>
 								<span name="isiesai"></span>
 							</div>
 						</div>
@@ -199,8 +195,7 @@
 							<label class="control-label"><strong>Jawaban
 									Soal</strong></label>
 							<div class="controls">
-								<textarea class="span12" rows="4" name="jawaban" id="jawaban"
-									placeholder="Dapat dikosongkan..."></textarea>
+								<textarea class="span12" rows="4" name="jawaban" id="jawaban" placeholder="Dapat dikosongkan..."></textarea>
 							</div>
 						</div>
 					</form>
@@ -212,8 +207,7 @@
 						<!-- <button type="submit" id="selesaiesai" class="btn btn-warning pull-right"
 							style="margin-right:10px;">
 							<span class="icon-ok"></span> Simpan ke draft</button> -->
-						<button type="submit" id="tambahesai" class="btn btn-success pull-right"
-							style="margin-right:10px;">
+						<button type="submit" id="tambahesai" class="btn btn-success pull-right" style="margin-right:10px;">
 							<span class="icon-plus"></span> Tambah</button>
 					</div>
 				</div>
@@ -232,14 +226,25 @@
 <script src="assets/js/app/myfunction.js"></script>
 <script src="assets/js/app/soalesai.js"></script>
 <?php $this->load->view('components/jsfoot'); ?>
-<script src="assets/ckeditor/ckeditor.js"></script>
-<script src="assets/ckfinder/ckfinder.js"></script>
+<!-- <script src="assets/ckeditor/ckeditor.js"></script>
+<script src="assets/ckfinder/ckfinder.js"></script> -->
+
+<!-- include summernote css/js-->
+<link href="summernote.css">
+<script src="summernote.js"></script>
 <script>
-	// Replace the <textarea id="editor1"> with a CKEditor
-	// instance, using default configuration.
-	CKEDITOR.replace('isiesai');
-	CKEDITOR.replace('jawaban');
-	CKFinder.setupCKEditor();
+	// // Replace the <textarea id="editor1"> with a CKEditor
+	// // instance, using default configuration.
+	// CKEDITOR.replace('isiesai');
+	// CKEDITOR.replace('jawaban');
+	// CKFinder.setupCKEditor();
+
+	$(document).ready(function() {
+		$('#isiesai').summernote();
+	});
+	$(document).ready(function() {
+		$('#jawaban').summernote();
+	});
 </script>
 <!-- <script>
 	var seq = 0;
